@@ -18,11 +18,25 @@
     <main class="proj-container">
         <h1 class="proj-header">Project Portfolio</h1>
         <div class="proj-img-container">
-            <img src="./images/header.jpg" alt="Placeholder image for Project 09: Robotic Arm">
+            <img src="./images/arm.jpg" alt="Robotic arm built with colorful beams, gears, and motors on a yellow base">
         </div>
         <h2 class="proj-header">Project 09: Robotic Arm</h2>
         <div class="proj-desc">
-            <p>Details for Project 09: Robotic Arm have not been added yet. Replace this note and the placeholder image with information and a photo of the completed project.</p>
+            <p>This robotic arm uses a light sensor and two motors to respond to an object. The Python program waits for the sensor to detect something, then runs a timed sequence to move the arm and operate its grip.</p>
+
+            <h3>How the code works</h3>
+            <p>The program checks the light sensor on port E every 50 milliseconds. A reflection reading above 10 counts as a detection. It requires the detection to continue for about three seconds before starting the movement sequence, which helps prevent a brief sensor reading from triggering the arm.</p>
+            <p>Once an object is detected, motor F turns backward by 85 degrees, and motor B runs backward for three seconds to grip. Motor B is then held while motor F turns another 190 degrees. After a two-second pause, motor B runs forward for three seconds to release. Motor F then turns to 275 degrees, and both motors stop. The program waits until the sensor no longer detects the object before checking for another one.</p>
+            <p>The motor speeds are set to 150 degrees per second. The repeated checks and movement sequence run inside a loop, so the arm can repeat the process.</p>
+        </div>
+
+        <h3 class="proj-header">Python Program</h3>
+        <div class="proj-img-container">
+            <img src="./images/Armcode.png" alt="Screenshot of the Python code that controls the robotic arm">
+        </div>
+
+        <div class="proj-video-container">
+            <iframe src="https://www.youtube.com/embed/8IGDWUBkjFw" title="Project 09 Robotic Arm demonstration" allowfullscreen></iframe>
         </div>
     </main>
 
